@@ -8,7 +8,7 @@ public class EnemyType1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * 0.05f);
+        transform.Translate(Vector3.left * 0.01f);
     }
 
     void OnCollisionEnter(Collision col)

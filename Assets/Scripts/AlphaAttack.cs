@@ -11,7 +11,7 @@ public class AlphaAttack : MonoBehaviour
     void Alpha_Attack_Torpedo() {
         if (Input.GetKeyDown(KeyCode.B) && Torpedo_Attack_Available == true) {
             Fire fire = GameObject.Find("Square").GetComponent<Fire>();
-            fire.Normal_Shooting_Mode = false;
+            GameManager.instance.Normal_Shooting_Mode = false;
             Instantiate(Torpedo, fire.FirePos.transform.position, fire.FirePos.transform.rotation);
             Torpedo_Attack_Available = false;
         }

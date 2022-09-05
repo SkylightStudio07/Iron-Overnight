@@ -21,7 +21,7 @@ public class ChargeCheck : MonoBehaviour
 
     void Charge_Checking() {
         Fire fire = GameObject.Find("Square").GetComponent<Fire>();
-        if (fire.time > fire.charging_time) {
+        if (fire.time > GameManager.instance.charging_time) {
             Charge_Check.SetActive(true);
         }
         else {

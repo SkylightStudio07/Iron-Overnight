@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
-    private Animator anim; // Animator�� �ҷ����� ���� ����
+    private Animator anim; 
 
     // Use this for initialization
 
@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
     void Update()
 
     {
-        MoveControl();
-        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        if (GameManager.instance.isMove == true) {
+            MoveControl();
+            anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+            anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        }
     }
 }

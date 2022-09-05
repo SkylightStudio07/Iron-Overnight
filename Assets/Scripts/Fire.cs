@@ -8,8 +8,6 @@ public class Fire : MonoBehaviour
     public AudioClip audio_Fire;
     public AudioClip audio_Charge_Shoot;
 
-    public bool Normal_Shooting_Mode = true;
-
     AudioSource audioSource;
 
     public GameObject Bullet;
@@ -18,7 +16,6 @@ public class Fire : MonoBehaviour
     public Transform FirePos;
 
     public float time; 
-    public float charging_time = 3;
 
     public float shoot_delay;
 
@@ -47,24 +44,24 @@ public class Fire : MonoBehaviour
         shoot_delay += Time.deltaTime;
 
         if (shoot_delay > 0.5) {
-            Normal_Shooting_Mode = true;
+            GameManager.instance.Normal_Shooting_Mode = true;
         }
 
-        if (Input.GetKey(KeyCode.Space) && Normal_Shooting_Mode)
+        if (Input.GetKey(KeyCode.Space) && GameManager.instance.Normal_Shooting_Mode)
         {
             Debug.Log("Fire!");
             PlaySound("Fire");
             Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
             
             shoot_delay = 0;
-            Normal_Shooting_Mode = false;
+            GameManager.instance.Normal_Shooting_Mode = false;
         }
     }
 
     void Charging_Shot()
     {
         if (Input.GetKey(KeyCode.V)) {
-            Normal_Shooting_Mode = false;
+            GameManager.instance.Normal_Shooting_Mode = false;
             time += Time.deltaTime;
             Debug.Log("V 키 누르는 중");
         }
@@ -73,19 +70,19 @@ public class Fire : MonoBehaviour
             PlaySound("Charge");
         }
 
-        if (time < charging_time && Input.GetKeyUp(KeyCode.V))
+        if (time < GameManager.instance.charging_time && Input.GetKeyUp(KeyCode.V))
         {
             time = 0;
-            Normal_Shooting_Mode = true;
+            GameManager.instance.Normal_Shooting_Mode = true;
         }
 
-        if (time > charging_time && Input.GetKeyUp(KeyCode.V))
+        if (time > GameManager.instance.charging_time && Input.GetKeyUp(KeyCode.V))
         {
             Debug.Log("Super Fire!");
             PlaySound("Charge_Fire");
             Instantiate(Bullet_Charge, FirePos.transform.position, FirePos.transform.rotation);
             time = 0;
-            Normal_Shooting_Mode = true;
+            GameManager.instance.Normal_Shooting_Mode = true;
         }
     }
 
