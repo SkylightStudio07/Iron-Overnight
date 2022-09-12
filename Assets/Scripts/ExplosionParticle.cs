@@ -7,7 +7,8 @@ public class ExplosionParticle : MonoBehaviour
     public float DestroyTime = 1.5f;
     void Start () 
     {
-        Destroy(gameObject, DestroyTime); 
+        GameManager.instance.normal_particle_num--;
+        Destroy(gameObject, DestroyTime);
     }
 
     // Update is called once per frame

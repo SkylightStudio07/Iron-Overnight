@@ -9,6 +9,6 @@ public class Title : MonoBehaviour
     
     public void LoadGame()
     {
-        LoadingSceneManager.LoadScene("Prologue");
+        LoadingSceneManager.LoadScene("Brave New World");
     }
 }

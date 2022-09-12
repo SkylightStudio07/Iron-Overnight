@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5682550129042321711}
+  Particle_2: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   BossHP: 1000
 --- !u!95 &5682550129042321711
 Animator:
@@ -134,8 +135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss_speed: 1
+  PlayerPos: {fileID: 0}
   Boss_Prologue_Charging: {fileID: 1261052002468511830, guid: 41ddf5cc77a0c654ba3b01f6da06872b, type: 3}
   Boss_Prologue_Laser: {fileID: 8300081937008348858, guid: 96c992a1499dd9648a7985a4c9985563, type: 3}
+  Boss_Prologue_Torpedo: {fileID: 557708020567883871, guid: e17c417af80e4574489c349656397892, type: 3}
+  Boss_Prologue_Carrierborne_Aircrafts: {fileID: 7819574563844107961, guid: a325ce10a2d0e4a4ab803dd04e004358, type: 3}
   Boss_FirePos: {fileID: 7468987188616448953}
   Boss_Prologue_isDelay: 1
   Boss_Prologue_Charging_Check: 1
@@ -161,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!61 &551708236417332330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,7 +176,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.122562885, y: -0.15524614}

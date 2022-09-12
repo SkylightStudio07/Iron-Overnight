@@ -12,7 +12,19 @@ public class AutoRemove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(col.gameObject);
+            Debug.Log("Bullet Destroyed");
+        }
         if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(col.gameObject);
+            Debug.Log("Bullet Destroyed");
+        }
+
+        if (col.gameObject.tag == "Enemy_Bullet")
         {
             Destroy(col.gameObject);
             Debug.Log("Bullet Destroyed");

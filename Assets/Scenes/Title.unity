@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa06454660f7af44b1db85e309c643f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Prologue
+  SceneToLoad: Brave New World
 --- !u!4 &1004579259
 Transform:
   m_ObjectHideFlags: 0

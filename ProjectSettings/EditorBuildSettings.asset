@@ -9,9 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Prologue.unity
+    path: Assets/Scenes/Stage 2.unity
     guid: e45b7febe154fa848906ea9f9206ef88
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 1b46ff5a747083f4d875048e23332101
+  - enabled: 1
+    path: Assets/Scenes/Brave New World.unity
+    guid: 0707ea7de86704b4b850325f4fb6d3f4
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 49704ddac1e156b4988ca602580ead48
+  - enabled: 1
+    path: Assets/Scenes/Stage 4.unity
+    guid: 93f416c2a30e58c4483eb58a72602ae0
+  - enabled: 1
+    path: Assets/Scenes/Stage 3.unity
+    guid: bc30c4473aae4fa4388a5a185bf73ab1
   m_configObjects: {}

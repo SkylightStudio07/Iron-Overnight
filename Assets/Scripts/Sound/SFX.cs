@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SFX : MonoBehaviour
 {
 
-    public AudioClip Siren;
-    public AudioClip audio_Charge_Shoot;   
+    public AudioClip Victory;   
     public AudioClip audio_Damage;
     public AudioClip audio_Burst;
+
+    public AudioClip Prologue_BGM;
+    public AudioClip Stage_2_BGM;
+
+
     AudioSource audioSource;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        
+        StageCheck();
     }
 
     void Awake()
@@ -26,22 +31,38 @@ public class SFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Boss_Warning_Sound();
+        
     }
 
-    void Boss_Warning_Sound() {
+    void Victory_Check() {
         EnemySpawn enemyspawn = GameObject.Find("SpawnManager").GetComponent<EnemySpawn>();
-        if(enemyspawn.bossgen == false) {
-            PlaySound("Siren");
+        if (enemyspawn.boss_defeated == true) {
+            PlaySound("Victory");
+        }
+    }
+
+    void StageCheck() {
+        if (SceneManager.GetActiveScene().name == "Prologue") {
+            PlaySound("Prologue");
+        }
+        if (SceneManager.GetActiveScene().name == "Stage 2") {
+            PlaySound("Stage_2");
         }
     }
 
     void PlaySound(string Action) {
         switch (Action) {
-            case "Siren" :
-                audioSource.clip = Siren;
+            case "Victory" :
+                audioSource.clip = Victory;
+                break;
+            case "Prologue" :
+                audioSource.clip = Prologue_BGM;
+                break;
+            case "Stage_2" :
+                audioSource.clip = Stage_2_BGM;
                 break;
         }
+           
         audioSource.Play();
     }
 
