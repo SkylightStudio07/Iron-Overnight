@@ -38,6 +38,9 @@ public class Enemy_Boss : MonoBehaviour
     }
 
     void Boss_Clear_Check() {
+        PlayerController playercontroller = GameObject.Find("Square").GetComponent<PlayerController>();
+        playercontroller.gameObject.tag = "Player_Ne";
+
         if (SceneManager.GetActiveScene().name == "Prologue") {
             GameManager.instance.isPrologueCleared = true;
         }
@@ -47,6 +50,10 @@ public class Enemy_Boss : MonoBehaviour
 
         else if (SceneManager.GetActiveScene().name == "Stage 3") {
             GameManager.instance.isThirdCleared = true;
+    }
+
+        else if (SceneManager.GetActiveScene().name == "Stage 3") {
+            LoadingSceneManager.LoadScene("End of the Dream");
     }
 }
 }

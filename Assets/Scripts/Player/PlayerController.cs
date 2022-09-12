@@ -45,27 +45,29 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     
     {
-        if (col.gameObject.CompareTag("Enemy_Bullet"))
-        {
-            Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
-            Destroy(col.gameObject);
-            StartCoroutine(DeathCheck());
-        }
-        if (col.gameObject.CompareTag("Enemy_N"))
-        {
-            Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
-            Destroy(col.gameObject);
-            StartCoroutine(DeathCheck());
-        }
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
-            StartCoroutine(DeathCheck());
-        }
-        if (col.gameObject.CompareTag("Boss"))
-        {
-            Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
-            StartCoroutine(DeathCheck());
+        if(gameObject.tag == "Player") {
+            if (col.gameObject.CompareTag("Enemy_Bullet"))
+            {
+                Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
+                Destroy(col.gameObject);
+                StartCoroutine(DeathCheck());
+            }
+            if (col.gameObject.CompareTag("Enemy_N"))
+            {
+                Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
+                Destroy(col.gameObject);
+                StartCoroutine(DeathCheck());
+            }
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
+                StartCoroutine(DeathCheck());
+            }
+            if (col.gameObject.CompareTag("Boss"))
+            {
+                Instantiate(Particle_1, gameObject.transform.position + new Vector3(0, 0, -1), gameObject.transform.rotation);
+                StartCoroutine(DeathCheck());
+            }
         }
     }
 

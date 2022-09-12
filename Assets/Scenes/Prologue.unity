@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Siren: {fileID: 8300000, guid: ecd31749e627d5847a9dada02dc42dfb, type: 3}
   Boss_Approaching_UI: {fileID: 1723134057}
-  boss_gen_time: 10
+  boss_gen_time: 200
   enableSpawn: 1
   bossgen: 1
   boss_defeated: 0

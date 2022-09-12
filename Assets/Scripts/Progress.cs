@@ -9,6 +9,7 @@ public class Progress : MonoBehaviour
     [SerializeField]private Button ST1;
     [SerializeField]private Button ST2;
     [SerializeField]private Button ST3;
+    [SerializeField]private Button ST4;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,10 @@ public class Progress : MonoBehaviour
         if (GameManager.instance.isPrologueCleared == true) {
             ST2.interactable = true;
             if(GameManager.instance.isSecondCleared == true) {
-                ST3.interactable = true;    
+                ST3.interactable = true;
+                if(GameManager.instance.isThirdCleared == true) {
+                    ST4.interactable = true;    
+                }    
             }
         }
     }

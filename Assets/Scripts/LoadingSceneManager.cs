@@ -66,6 +66,7 @@ public class LoadingSceneManager : MonoBehaviour
     }
 
     void NextSceneCheck() {
+        GameManager.instance.Stage_3_CannnotFire = true;
         if (nextScene == "Prologue") {
             DefaultImg.SetActive(false);
             PrologueImg.SetActive(true);
@@ -75,6 +76,10 @@ public class LoadingSceneManager : MonoBehaviour
             Stage2Img.SetActive(true);
         }
         else if (nextScene == "Stage 3") {
+            DefaultImg.SetActive(false);
+            Stage3Img.SetActive(true);
+        }
+        else if (nextScene == "Stage 4") {
             DefaultImg.SetActive(false);
             Stage3Img.SetActive(true);
         }

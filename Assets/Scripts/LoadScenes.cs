@@ -29,4 +29,8 @@ public class LoadScenes : MonoBehaviour
         LoadingSceneManager.LoadScene("Stage 3");
     }
 
+    public void LoadStage4() {
+        LoadingSceneManager.LoadScene("Stage 4");
+    }
+
 }
